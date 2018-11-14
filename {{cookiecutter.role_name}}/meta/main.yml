@@ -1,20 +1,20 @@
 ---
 galaxy_info:
-  author: your name
-  description: your description
-  company: your company (optional)
+  author: {{ cookiecutter.author }}
+  description: {{ cookiecutter.description }}
+  company: {{ cookiecutter.company }}
 
   # Specify issue tracker (default github)
   # issue_tracker_url: http://example.com/issue/tracker
 
   license: MIT
 
-  min_ansible_version: 2.4
+  min_ansible_version: {{ cookiecutter.min_ansible_version }}
 
   # If container-enabled, specify minimum ansible container version.
   # min_ansible_container_version:
 
-  # Specify github branch to use (default master)
+  # Specify github branch (default master)
   # github_branch:
 
   platforms:
