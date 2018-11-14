@@ -1,0 +1,38 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: ansible_push
+  playbook: playbook.yml
+  chef_bootstrap_url: nil
+
+platforms:
+  - name: centos
+    driver_config:
+      image: centos/systemd
+      platform: rhel
+      privileged: true
+      volume: /sys/fs/cgroup:/sys/fs/cgroup:ro
+      provision_command:
+        - yum install -y net-tools
+        - >-
+          echo "OPTIONS='
+          -o UseDNS=no
+          -o UsePAM=no
+          -o PasswordAuthentication=yes'"
+          >> /etc/sysconfig/sshd
+        - systemctl enable sshd
+      run_command: /usr/sbin/init
+
+suites:
+  - name: default
+
+verifier:
+  name: inspec
+
+lifecycle:
+  pre_converge:
+    - local: make pre_converge
+  pre_verify:
+    - local: make pre_verify

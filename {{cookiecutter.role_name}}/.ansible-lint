@@ -1,0 +1,5 @@
+exclude_paths:
+  - ./.kitchen/
+  - ./kitchen.yml
+
+use_default_rules: true

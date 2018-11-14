@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  author: your name
+  description: your description
+  company: your company (optional)
+
+  # Specify issue tracker (default github)
+  # issue_tracker_url: http://example.com/issue/tracker
+
+  license: MIT
+
+  min_ansible_version: 2.4
+
+  # If container-enabled, specify minimum ansible container version.
+  # min_ansible_container_version:
+
+  # Specify github branch to use (default master)
+  # github_branch:
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+
+  galaxy_tags: []
+dependencies: []
