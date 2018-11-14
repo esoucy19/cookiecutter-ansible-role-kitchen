@@ -1,0 +1,2 @@
+# cookiecutter-ansible-role-kitchen
+
