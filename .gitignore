@@ -115,3 +115,7 @@ dmypy.json
 
 # Ansible
 *.retry
+
+# Cookiecutter
+output/
+python_boilerplate/
