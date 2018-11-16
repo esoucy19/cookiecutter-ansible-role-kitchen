@@ -4,6 +4,6 @@
     "company": "your company (optional)",
     "role_name": "your-role",
     "repo_name": "ansible-role-your-role",
-    "license": "MIT"
+    "license": "MIT",
     "min_ansible_version": "2.5"
 }
