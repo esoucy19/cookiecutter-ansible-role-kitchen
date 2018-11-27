@@ -1,4 +1,3 @@
-#!/usr/env/sh
+#!/usr/bin/env sh
 
-cd ./roles
-ln -s ../ {{ cookiecutter.role_name }}
+ln -s ../ './roles/{{ cookiecutter.role_name }}'
