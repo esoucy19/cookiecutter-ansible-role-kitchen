@@ -47,8 +47,27 @@ make test
   - make converge, verify, test, etc: Run usual kitchen commands.
 - Project folder is symlinked in roles using the actual role name. That way you
   don't have to call the role using your repo name in your tests.
+- Travis-ci support to automatically test your role and get the much-coveted
+"build passing" badge on Galaxy.
 
 # Additional information
+
+## Galaxy and travis integration
+
+To setup for automatic integration with travis-ci, first enable your git repo in
+your travis account. Go to your account settings and copy your travis token to
+the clipboard. Then run the following commands in the root of your repository:
+
+```bash
+ansible-galaxy login
+
+# Use your own github user, repo and travis token here
+ansible-galaxy setup travis github_user github_repo travis_token
+```
+
+And that's it. Now every push to your repository will trigger a travis build,
+which will then trigger an import in Ansible Galaxy. If all goes well, your role
+will now bear a nice "build passing" badge. Use your newfound powers wisely!
 
 ## Docker gotchas
 
@@ -110,10 +129,6 @@ error message if it isn't. This is why we install net-tools ourselves in the
 provision_command section. Make sure you do the same if you add other platforms,
 or if you end up using inspec resources that require additional packages to
 be installed.
-
-
-# TODO
-- Add travis-ci support and instructions for easy publishing to Ansible Galaxy.
 
 # License
 
