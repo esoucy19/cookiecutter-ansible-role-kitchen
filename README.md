@@ -10,10 +10,10 @@ unless you are running Windows yourself you will probably have to use Vagrant
 instead of Docker.
 
 # Requirements
-- docker
-- make
-- ruby with the bundler gem.
-- python with the cookiecutter and pipenv packages.
+- Docker.
+- Make.
+- Ruby with the bundler gem.
+- Python with the cookiecutter and pipenv packages.
 
 # Installation
 
@@ -114,21 +114,21 @@ pre_tasks section to playbook.yml.
     - your-role
 ```
 
-If you are making a container-enabled role, consider baking this task into
-your role itself. Might as well then have a task to install the specific package
-that requires its docs, and a third task to re-add the nodocs configuration.
-That way you are only downloading the docs for a single package and your
-containers will stay lean and happy.
+If you are making a container-enabled role, consider baking this task into your
+role itself. Might as well then have a task to install the specific package that
+requires its docs, and a third task to re-add the nodocs configuration. That way
+you are only downloading the docs for a single package and your containers will
+stay lean and happy.
 
 ### Missing net-tools
 
-Docker containers are minimalist (duh), so even basic packages like netstat
-or ss won't be present by default. It just so happens that inspec's port
-resource requires ss to be installed and will fail with a pretty unhelpful
-error message if it isn't. This is why we install net-tools ourselves in the
-provision_command section. Make sure you do the same if you add other platforms,
-or if you end up using inspec resources that require additional packages to
-be installed.
+Docker containers are minimalist (duh), so even basic packages like netstat or
+ss won't be present by default. It just so happens that inspec's port resource
+requires ss to be installed and will fail with a pretty unhelpful error message
+if it isn't. This is why we install net-tools ourselves in the
+provision\_command section. Make sure you do the same if you add other
+platforms, or if you end up using inspec resources that require additional
+packages to be installed.
 
 # License
 
