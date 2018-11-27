@@ -47,4 +47,7 @@ pipenv_install:
 	pipenv install
 
 ansible-galaxy_install:
-	ansible-galaxy install --force -r requirements.yml
+	if [ -f ./requirements.yml ] ; \
+	then \
+		ansible-galaxy install --force -r requirements.yml ; \
+	fi
