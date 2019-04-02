@@ -45,6 +45,7 @@ make test
   - make install: Run bundle install and pipenv install.
   - make lint: Run linters on project.
   - make converge, verify, test, etc: Run usual kitchen commands.
+  NOTE: The Makefile is still in experimental stage and there may be some problems with it in more complex cases.
 - Project folder is symlinked in roles using the actual role name. That way you
   don't have to call the role using your repo name in your tests.
 - Travis-ci support to automatically test your role and get the much-coveted
